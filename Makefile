@@ -899,6 +899,14 @@ KBUILD_AFLAGS	+= $(POLLY_FLAGS)
 KBUILD_LDFLAGS	+= $(POLLY_FLAGS)
 endif
 
+ifdef CONFIG_CC_IS_CLANG
+KBUILD_CFLAGS += -mcpu=cortex-a55
+KBUILD_AFLAGS += -mcpu=cortex-a55
+else
+KBUILD_CFLAGS += -mcpu=cortex-a76.cortex-a55
+KBUILD_AFLAGS += -mcpu=cortex-a76.cortex-a55
+endif
+
 # Tell gcc to never replace conditional load with a non-conditional one
 ifdef CONFIG_CC_IS_GCC
 # gcc-10 renamed --param=allow-store-data-races=0 to
