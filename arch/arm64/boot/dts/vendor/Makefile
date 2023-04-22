@@ -1,8 +1,11 @@
 vendor := $(srctree)/$(src)
 
 subdir-y += qcom
-subdir-y += oplus/cupid
+ifeq ($(BRAND_SHOW_FLAG),oneplus)
 subdir-y += oplus/lemonadev
-subdir-y += oplus/lunaa
 subdir-y += oplus/martini
+else
+subdir-y += oplus/cupid
+subdir-y += oplus/lunaa
 subdir-y += oplus/porsche
+endif
