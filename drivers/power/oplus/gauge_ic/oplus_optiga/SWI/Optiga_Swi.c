@@ -32,10 +32,10 @@ BOOL Swi_ReadRegisterSpace( uint16_t uw_Address, uint8_t * ubp_Data )
 
 	/* send address to read from */
 	Swi_SendRawWordNoIrq(SWI_ERA, ((uw_Address >> 8u) & 0xFFu) );
-	
+
 	/* set burst length to one byte */
 	Swi_SendRawWordNoIrq(SWI_BC, SWI_RBL0 );
-	
+
 	Swi_SendRawWordNoIrq(SWI_RRA, ( uw_Address        & 0xFFu) );
 
 	/* read out data */
@@ -618,7 +618,7 @@ static BOOL b_push( uint8_t ub_Data )
 *
 * \return  Size of ub_Stack
 ********************************************************************/
-static uint8_t ub_SizeOfStack()
+static uint8_t ub_SizeOfStack(void)
 {
     return ub_StackPointer;
 }
