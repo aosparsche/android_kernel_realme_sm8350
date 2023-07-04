@@ -1,6 +1,5 @@
 vendor := $(srctree)/$(src)
 
-subdir-y += qcom
 ifeq ($(BRAND_SHOW_FLAG),oneplus)
 subdir-y += oplus/lemonadev
 subdir-y += oplus/martini
