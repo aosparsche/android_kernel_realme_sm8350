@@ -82,8 +82,7 @@ ssize_t oplus_set_vsync_switch(struct kobject *obj,
     struct kobj_attribute *attr, const char *buf, size_t count);
 
 /* --------------- msm_drv ---------------*/
-int oplus_adfr_thread_create(void *msm_param,
-	void *msm_priv, void *msm_ddev, void *msm_dev);
+int oplus_adfr_thread_create(void *msm_priv, void *msm_ddev, void *msm_dev);
 void oplus_adfr_thread_destroy(void *msm_priv);
 
 /* ------------ sde_connector ------------ */
